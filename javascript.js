@@ -13,7 +13,7 @@ function getComputerChoice(rock, paper, scissors) {
     return scissors;
   }
   
-console.log(getComputerChoice("rock", "paper", "scissors"));
+
 
 
 function getHumanChoice(){
@@ -58,4 +58,12 @@ function playRound(){
     console.log("Number of Ties:", bothTie);
 }
 
-playRound();
+
+for (let i = 0; i <= 5; i++){
+    playRound();
+}
+
+console.log("🎉 Final Results:");
+console.log("Human:", humanScore);
+console.log("Computer:", computerScore);
+console.log("Ties:", bothTie);
