@@ -14,25 +14,8 @@ function getComputerChoice(rock, paper, scissors) {
   }
   
 
+function playRound(humanChoice){
 
-
-function getHumanChoice(){
-
-    let choose = prompt('Welcome to the game: To play, please type rock, paper or scissors:').toLowerCase();
-
-    if (choose === rock){
-        return rock;
-    } else if (choose === paper){
-        return paper;
-    } else{
-        return scissors;
-    }
-}
-
-
-function playRound(){
-
-    const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice(rock, paper, scissors);
 
     console.log('You chose:', humanChoice);
@@ -59,11 +42,16 @@ function playRound(){
 }
 
 
-for (let i = 0; i <= 5; i++){
-    playRound();
-}
+const container = document.createElement("div");
+document.body.appendChild(container);
 
-console.log("🎉 Final Results:");
-console.log("Human:", humanScore);
-console.log("Computer:", computerScore);
-console.log("Ties:", bothTie);
+const choices = [rock, paper, scissors];
+
+choices.forEach(choice => {
+    const button = document.createElement("button");
+    button.textContent = choice;
+    button.addEventListener("click", () => {
+        playRound(choice);
+    });
+    container.appendChild(button);
+});
